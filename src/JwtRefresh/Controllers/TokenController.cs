@@ -5,9 +5,10 @@ namespace JwtRefresh.Controllers
     [RoutePrefix("api/token")]
     public class TokenController : ApiController
     {
-        [HttpGet, Route("")]
-        public string Get()
+        [HttpPost, Route("")]
+        public string Post()
         {
+            var header = this.Request.Headers.Authorization?.Parameter;
             return "token!";
         }
     }
